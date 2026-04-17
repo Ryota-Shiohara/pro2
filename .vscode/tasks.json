@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build current java file",
+      "type": "shell",
+      "command": "javac",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "args": [
+        "-d",
+        "${workspaceFolder}\\bin\\${relativeFileDirname}",
+        "*.java"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "java",
+        "fileLocation": "autoDetect",
+        "pattern": {
+          "regexp": "^(.+\\.java):(\\d+):\\s+error:\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "message": 3
+        }
+      }
+    },
+    {
+      "label": "run current java file",
+      "type": "shell",
+      "command": "java",
+      "args": [
+        "-cp",
+        "${workspaceFolder}\\bin\\${relativeFileDirname}",
+        "${fileBasenameNoExtension}"
+      ],
+      "dependsOn": "build current java file",
+      "problemMatcher": []
+    }
+  ]
+}

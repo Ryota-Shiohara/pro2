@@ -1,6 +1,12 @@
 {
+    "editor.formatOnSave": true,
+    "[java]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "java.format.enabled": true,
     "java.project.sourcePaths": [
-        "src/01"
+        "src"
     ],
     "java.project.outputPath": "bin"
 }
