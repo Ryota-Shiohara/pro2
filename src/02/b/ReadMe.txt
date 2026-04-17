@@ -1,0 +1,2 @@
+2-10
+The area of the rectangle is 144, and the circumference is 50
